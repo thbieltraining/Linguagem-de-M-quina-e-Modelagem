@@ -4,7 +4,7 @@
     {
       "label": "Build NASM",
       "type": "shell",
-      "command": "nasm -f elf64 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.o && gcc -no-pie ${fileDirname}/${fileBasenameNoExtension}.o -o ${fileDirname}/${fileBasenameNoExtension}",
+      "command": "nasm -f elf64 -g -F dwarf ${file} -o ${fileDirname}/${fileBasenameNoExtension}.o && gcc -g -no-pie ${fileDirname}/${fileBasenameNoExtension}.o -o ${fileDirname}/${fileBasenameNoExtension}",
       "group": { "kind": "build", "isDefault": true }
     }
   ]
