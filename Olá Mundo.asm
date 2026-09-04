@@ -1,4 +1,4 @@
-; Vamo criar um cod mais simples, mas mais compplexo que o anterior
+; Vamo criar um cod mais simples, mas mais complexo que o anterior
 ; Vai ser nossa entrada
 ; Vamo de Olá, Mundo! 
 
