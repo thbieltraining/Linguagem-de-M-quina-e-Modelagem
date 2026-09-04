@@ -1,18 +1,75 @@
-Como compilar?
+# ⚙️ Como Compilar
 
-*1- Use o powershell para achar seu build tools caso não esteja em um ambiente já prepardo e também prepar eu arquivo .obj .
-   **1.1 -  roda esses comando em sequência:  
-" nasm -f win64 "Ola Mundo Win.asm" -o ola.obj "
-" Get-ChildItem "C:\Program Files*\Microsoft Visual Studio" -Recurse -Filter "vcvars64.bat" -ErrorAction SilentlyContinue | Select-Object FullName "
-   **1.2 - Bora pro CMD com o comando copiado: 
-*2- Agora é CMD, cola o comando. 
-   **2.1 - Roda um CD para seu diretório de trabalho só por garantia 
-   **2.2 - Roda novamente:
-" nasm -f win64 "Ola Mundo Win.asm" -o ola.obj "
-   ** Agora vamos direcionar a compilação: 
-" cl.exe ola.obj kernel32.lib /Fe:ola.exe /link /entry:mainCRTStartup /subsystem:console "
- 
+### 1. Preparando o ambiente
 
--- Por último e muito importante : 
-[ola.exe]
+Utilize o **PowerShell** para localizar o ambiente de compilação do Visual Studio, caso você não esteja utilizando um terminal já preparado.
 
+Primeiro, gere o arquivo objeto `.obj`:
+
+```powershell
+nasm -f win64 "Ola Mundo Win.asm" -o ola.obj
+```
+
+Em seguida, localize o arquivo `vcvars64.bat`:
+
+```powershell
+Get-ChildItem "C:\Program Files*\Microsoft Visual Studio" -Recurse -Filter "vcvars64.bat" -ErrorAction SilentlyContinue | Select-Object FullName
+```
+
+Copie o caminho retornado pelo comando.
+
+---
+
+### 2. Configurando o ambiente de compilação
+
+Agora abra o **CMD (Prompt de Comando)**.
+
+Cole e execute o caminho do `vcvars64.bat` encontrado anteriormente para preparar o ambiente de compilação.
+
+Depois, navegue até o diretório onde está localizado o projeto:
+
+```cmd
+cd "CAMINHO_DO_SEU_PROJETO"
+```
+
+---
+
+### 3. Gerando novamente o arquivo objeto
+
+Por garantia, execute novamente o NASM:
+
+```cmd
+nasm -f win64 "Ola Mundo Win.asm" -o ola.obj
+```
+
+---
+
+### 4. Gerando o executável
+
+Agora vamos realizar a linkedição e gerar o arquivo `.exe`:
+
+```cmd
+cl.exe ola.obj kernel32.lib /Fe:ola.exe /link /entry:mainCRTStartup /subsystem:console
+```
+
+Após a compilação, será gerado o executável:
+
+```text
+ola.exe
+```
+
+---
+
+## ▶️ Executando
+
+Por último — e muito importante 😄 — execute:
+
+```cmd
+ola.exe
+```
+
+Ou simplesmente abra:
+
+```text
+[ ola.exe ]
+```
