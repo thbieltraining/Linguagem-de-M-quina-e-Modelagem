@@ -2,7 +2,6 @@
 
 ![Assembly](https://img.shields.io/badge/Assembly-x86--64-orange)
 ![NASM](https://img.shields.io/badge/Assembler-NASM-blue)
-![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
 
 Projeto desenvolvido para estudos em **Assembly x86-64**, demonstrando o processo completo de montagem, linkedição e geração de um executável Windows utilizando **NASM** e as ferramentas de compilação da Microsoft.
 
